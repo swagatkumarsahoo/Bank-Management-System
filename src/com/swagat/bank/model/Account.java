@@ -5,11 +5,13 @@ public class Account {
     private int accountNumber;
     private String holderName;
     private double balance;
+    private int pin;
 
-    public Account(int accountNumber, String holderName, double balance) {
+    public Account(int accountNumber, String holderName, double balance, int pin) {
         this.accountNumber = accountNumber;
         this.holderName = holderName;
         this.balance = balance;
+        this.pin = pin;
     }
 
     public int getAccountNumber() {
@@ -22,6 +24,10 @@ public class Account {
 
     public double getBalance() {
         return balance;
+    }
+
+    public boolean verifyPin(int pin) {
+        return this.pin == pin;
     }
 
     public void deposit(double amount) {
